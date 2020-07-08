@@ -1,7 +1,6 @@
 {
   "name": "react-native-toast",
   "version": "1.0.0",
-  "private": true,
   "description": "A ReactNative Toast Component for android and iOS",
   "main": "/lib/",
   "keywords": [
