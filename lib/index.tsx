@@ -1,10 +1,12 @@
 import React from 'react';
-import RootSiblings from 'react-native-root-siblings';
+import RootSiblings, {RootSiblingParent} from 'react-native-root-siblings';
 import Toast from './toast';
 import {ToastProps, DURATION, ToastType} from './type';
 
 let siblings: RootSiblings | null = null;
 let timer: number | null = null;
+
+export const ToastRoot = RootSiblingParent;
 
 export default {
   show(params: string | ToastProps, type: ToastType) {
@@ -13,11 +15,10 @@ export default {
       type,
       content: '',
     };
-    if (typeof params === 'string') {
-      Object.assign(data, {content: params});
-    } else {
-      Object.assign(data, params);
-    }
+    Object.assign(
+      data,
+      typeof params === 'string' ? {content: params} : params,
+    );
     if (siblings) {
       siblings.update(<Toast {...data} />);
       if (timer) {

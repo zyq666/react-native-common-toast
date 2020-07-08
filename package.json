@@ -1,7 +1,8 @@
 {
   "name": "react-native-toast",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
+  "main": "/lib/",
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",

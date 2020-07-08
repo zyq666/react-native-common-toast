@@ -16,12 +16,12 @@ import {
   Button,
   Text,
 } from 'react-native';
-import {RootSiblingParent} from 'react-native-root-siblings';
-import Toast from '../lib';
+import Toast, {ToastRoot} from '../lib';
+import {DURATION} from '../lib/type';
 
 const App = () => {
   return (
-    <RootSiblingParent>
+    <ToastRoot>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <View style={styles.btns}>
@@ -37,17 +37,26 @@ const App = () => {
               Toast.show(
                 {
                   content: (
-                    <Text style={{color: '#fff'}}>
-                      你好，<Text style={{color: '#6c6'}}>用户</Text>
-                    </Text>
+                    <View style={styles.custom}>
+                      <Text style={{color: '#fff'}}>
+                        你好，<Text style={{color: '#6c6'}}>用户</Text>
+                      </Text>
+                      <Text
+                        onPress={Toast.destroy}
+                        style={{color: '#fff', marginLeft: 10}}>
+                        关闭
+                      </Text>
+                    </View>
                   ),
+                  modal: true,
+                  duration: DURATION.NONE,
                 },
                 'info',
               )
             }
           />
           <Button title="show error" onPress={() => Toast.fail('失败')} />
-          <Button title="destory" onPress={() => Toast.destroy()} />
+          <Button title="destory" onPress={Toast.destroy} />
           <Button
             title="模态"
             onPress={() => Toast.success({content: '模态', modal: true})}
@@ -85,17 +94,22 @@ const App = () => {
           />
         </View>
       </SafeAreaView>
-    </RootSiblingParent>
+    </ToastRoot>
   );
 };
 
 const styles = StyleSheet.create({
   btns: {
-    height: '60%',
+    height: '100%',
     flexDirection: 'column',
     alignItems: 'stretch',
     justifyContent: 'space-around',
-    margin: 100,
+    marginHorizontal: 100,
+    backgroundColor: 'red',
+  },
+  custom: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
 });
 

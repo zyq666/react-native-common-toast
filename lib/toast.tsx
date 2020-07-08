@@ -13,7 +13,7 @@ const {width, height} = Dimensions.get('screen');
 
 export default React.memo((props: ToastProps & {type: ToastType}) => {
   const {type, content, modal, mask, style} = props;
-  const [position, setPosition] = React.useState<PositionType | null>(null);
+  const [pos, setPos] = React.useState<PositionType | null>(null);
 
   const buildIcon = React.useMemo(() => {
     switch (type) {
@@ -33,24 +33,18 @@ export default React.memo((props: ToastProps & {type: ToastType}) => {
   return (
     <View
       style={[
-        styles.modal,
-        modal ? {backgroundColor: 'transparent'} : {},
-        mask ? {backgroundColor: mask} : {},
+        modal ? styles.modal : styles.noModal,
+        {backgroundColor: mask ? mask : 'transparent'},
       ]}>
       <View
         onLayout={(e) => {
           const {width: w, height: h} = e.nativeEvent.layout;
-          setPosition({
+          setPos({
             left: (width - w) / 2,
             top: (height - h) / 2,
           });
         }}
-        style={[
-          styles.toastView,
-          position,
-          style,
-          {opacity: position ? 1 : 0},
-        ]}>
+        style={[styles.toastView, style, pos, {opacity: pos ? 1 : 0}]}>
         {buildIcon}
         {typeof content === 'string' ? (
           <Text style={styles.text}>{content}</Text>
@@ -63,12 +57,18 @@ export default React.memo((props: ToastProps & {type: ToastType}) => {
 });
 
 const styles = StyleSheet.create({
+  noModal: {
+    position: 'absolute',
+    elevation: 10000,
+    zIndex: 10000,
+  },
   modal: {
     position: 'absolute',
     top: 0,
     left: 0,
     right: 0,
     bottom: 0,
+    elevation: 10000,
   },
   toastView: {
     flexDirection: 'column',

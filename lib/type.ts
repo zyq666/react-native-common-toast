@@ -19,6 +19,8 @@ export type ToastProps = {
 };
 
 export type PositionType = {
-  left: number;
-  top: number;
+  left?: number;
+  top?: number;
+  bottom?: number;
+  right?: number;
 };

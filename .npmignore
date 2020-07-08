@@ -34,6 +34,20 @@ local.properties
 node_modules/
 npm-debug.log
 yarn-error.log
+ios
+android
+__tests__
+.buckconfig
+.flowconfig
+ios/Pods/
+.watchmanconfig
+app.json
+App.tsx
+babel.config.js
+index.js
+metro.config.js
+package-lock.json
+yarn.lock
 
 # BUCK
 buck-out/
@@ -56,18 +70,4 @@ buck-out/
 *.jsbundle
 
 # CocoaPods
-
-ios
-android
-__test__
-.buckconfig
-.flowconfig
-ios/Pods/
-.watchmanconfig
-app.json
-App.tsx
-babel.config.js
-index.js
-metro.config.js
-package-lock.json
-yarn.lock
+ios/Pods
