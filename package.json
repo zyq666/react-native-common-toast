@@ -1,5 +1,5 @@
 {
-  "name": "react-native-toast",
+  "name": "react-native-common-toast",
   "version": "1.0.0",
   "description": "A ReactNative Toast Component for android and iOS",
   "main": "/lib/",
@@ -30,22 +30,10 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "react": "16.11.0",
-    "react-native": "0.62.2",
-    "react-native-root-siblings": "^4.0.6"
+    "react-native-root-siblings": "^4.0.0"
   },
-  "devDependencies": {
-    "@babel/core": "^7.10.4",
-    "@babel/runtime": "^7.10.4",
-    "@react-native-community/eslint-config": "^2.0.0",
-    "@types/react": "^16.9.41",
-    "@types/react-native": "^0.62.17",
-    "babel-jest": "^26.1.0",
-    "eslint": "^7.4.0",
-    "jest": "^26.1.0",
-    "metro-react-native-babel-preset": "^0.60.0",
-    "react-test-renderer": "16.11.0",
-    "typescript": "^3.9.6"
+  "peerDependencies": {
+    "react-native": ">=0.47.0"
   },
   "jest": {
     "preset": "react-native"
