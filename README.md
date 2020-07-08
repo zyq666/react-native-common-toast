@@ -1,4 +1,4 @@
-# react-native-toast
+# react-native-common-toast
 A toast component with react-native
 
 * [x] support for iOS
