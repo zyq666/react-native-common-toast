@@ -12,6 +12,9 @@ A toast component with react-native
 
 ## Usage
 ```javascript
+import Toast from 'react-native-common-toast/lib';
+import {DURATION} from 'react-native-common-toast/lib/type';
+
 // show success toast
 Toast.success("success!");
 // show fail toast
@@ -32,6 +35,17 @@ Toast.info({
   duration: DURATION.NONE
 });
 ```
+> if react-native version >= 0.62, insert ToastRoot within root component like this
+> Read more about react-native-root-siblings
+``` javascript
+import {ToastRoot} from 'react-native-common-toast/lib';
+
+export default () => {
+  return <ToastRoot>
+    <App />
+  </ToastRoot>
+}
+```
 
 ## Events
 | name | params | description |
@@ -45,18 +59,18 @@ Toast.info({
 
 ## <a name="props">Props</a>
 
-if props is a string, the toast will direct show the string in content 
+> if props is a string, the toast will direct show the string in content 
 
-if props is an object, details are listed below
+> if props is an object, details are listed below
 
 | name | default | type | description |
 | :-----:| :----: | :----: | :----: |
 | content | | string / JSX.Element | The content for toast, maybe is string or JSX.Element |
 | duration | DURATION.SHORT | <a href="#duration">enum</a> | The duration for toast, if duration is DURATION.NONE, the toast will be not hide, unless you call function named destroy |
-| modal | false | boolean | The modal for toast, if modal is true, you can do nothing before the toast has been destoried |
+| modal | false | boolean | The modal for toast, if modal is true, you can do nothing before the toast has been destroyed |
 | mask | | string | The mask color for toast |
 | style | | ViewStyle | Custom style for toast |
-| onhide | | function | When toast has been destoried calling the function |
+| onhide | | function | When toast has been destroyed calling the function |
   
 ### <a name="duration">DURATION</a>
 + DURATION.SHORT = 5s
