@@ -1,8 +1,8 @@
 {
   "name": "react-native-common-toast",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "description": "A ReactNative Toast Component for android and iOS",
-  "main": "/lib/",
+  "main": "./lib/index",
   "keywords": [
     "react-native",
     "react-component",
