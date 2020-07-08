@@ -1,6 +1,6 @@
 {
   "name": "react-native-common-toast",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A ReactNative Toast Component for android and iOS",
   "main": "/lib/",
   "keywords": [
@@ -20,14 +20,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/zyq666/react-native-toast"
-  },
-  "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
-    "start": "react-native start",
-    "test": "jest",
-    "tsx": "./node_modules/.bin/tsc",
-    "lint": "eslint ."
   },
   "dependencies": {
     "react-native-root-siblings": "^4.0.0"
