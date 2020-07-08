@@ -2,7 +2,26 @@
   "name": "react-native-toast",
   "version": "1.0.0",
   "private": true,
+  "description": "A ReactNative Toast Component for android and iOS",
   "main": "/lib/",
+  "keywords": [
+    "react-native",
+    "react-component",
+    "react-native-component",
+    "react",
+    "mobile",
+    "ios",
+    "android",
+    "toast"
+  ],
+  "author": {
+    "name": "zhuyaqi"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zyq666/react-native-toast"
+  },
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
