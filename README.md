@@ -35,8 +35,8 @@ Toast.info({
   duration: DURATION.NONE
 });
 ```
-> if react-native version >= 0.62, insert ToastRoot within root component like this
-> Read more about react-native-root-siblings
++ if react-native version >= 0.62, insert ToastRoot within root component like this
++ Read more about react-native-root-siblings
 ``` javascript
 import {ToastRoot} from 'react-native-common-toast/lib';
 
